@@ -8,6 +8,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
         if (rootProject.ext.has("gradle_classpath")) {
             classpath rootProject.ext.gradle_classpath
         } else {
@@ -26,8 +27,8 @@ android {
         buildToolsVersion rootProject.ext.buildToolsVersion
     } else {
         logger.warn('compileSdkVersion not found in rootProject')
-        compileSdkVersion = 27
-        buildToolsVersion = "27.0.3"
+        compileSdkVersion = 29
+        buildToolsVersion = "28.0.3"
     }
 
     defaultConfig {
@@ -70,6 +71,10 @@ android {
             minifyEnabled false
         }
     }
+    compileOptions{
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 repositories {
@@ -82,13 +87,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.github.j4velin.colorpicker:colorpicker:1.20.6'
     implementation 'com.github.j4velin.EazeGraph:EazeGraph:1.0.3'
     implementation 'com.google.android.apps.dashclock:dashclock-api:2.0.0'
-    playImplementation 'com.google.android.gms:play-services-fitness:15.0.1'
-    playImplementation 'com.google.android.gms:play-services-games:15.0.1'
-    playImplementation 'com.google.android.gms:play-services-identity:15.0.1'
+    playImplementation 'com.google.android.gms:play-services-fitness:18.0.0'
+    playImplementation 'com.google.android.gms:play-services-games:19.0.0'
+    playImplementation 'com.google.android.gms:play-services-identity:17.0.0'
 }
 
 def props = new Properties()
