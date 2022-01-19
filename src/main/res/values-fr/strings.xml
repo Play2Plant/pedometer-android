@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
 
-    <string name="app_name">Podomètre</string>
+    <string name="app_name">Podomètre LEAF</string>
     <string name="goal">Objectif</string>
     <string name="step_size">Unité de pas</string>
     <string name="about">A propos</string>
